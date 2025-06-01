@@ -8,7 +8,7 @@ st.set_page_config(page_title="Retail Sales Dashboard", layout="wide")
 # --- LOAD DATA ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv('superstore.csv', encoding='ISO-8859-1')
+    df = pd.read_csv('app/superstore.csv', encoding='ISO-8859-1')
     df['Order Date'] = pd.to_datetime(df['Order Date'])
     df['Profit Margin'] = df['Profit'] / df['Sales']
     df['Order Month'] = df['Order Date'].dt.to_period('M').astype(str)
